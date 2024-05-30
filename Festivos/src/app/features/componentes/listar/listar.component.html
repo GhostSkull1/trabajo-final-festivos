@@ -1,0 +1,28 @@
+<mat-form-field>
+    <mat-label>Año</mat-label>
+    <input  matInput [(ngModel)]="year">
+</mat-form-field>
+<button mat-stroked-button color="primary" (click)="listar()">Listar</button>
+
+<ngx-datatable class="dark" [rows]="festivos" [columns]="columnas">
+</ngx-datatable>
+
+<div style="margin: 5rem;">
+    <div>
+        <div>
+            <p>Año</p>
+            <input type="number" [(ngModel)]="year2" id="year2" />
+        </div>
+        <div>
+            <p>Mes</p>
+            <input type="number" [(ngModel)]="month" id="month" />
+        </div>
+        <div>
+            <p>Dia</p>
+            <input type="number" [(ngModel)]="day" id="day" />
+        </div>
+    </div>
+
+    <button mat-stroked-button color="primary" (click)="get()">Obtener festivo</button>
+    <p>{{msgResponse}}</p>
+</div>
